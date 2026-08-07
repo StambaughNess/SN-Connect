@@ -138,6 +138,19 @@
     .urgent-footer-block b { color: var(--gold); display: block; font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 4px; font-weight: 800; }
     .urgent-footer-block a { color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(255,184,28,0.5); transition: border-color 0.15s; }
     .urgent-footer-block a:hover { border-bottom-color: var(--gold); }
+    .urgent-authors { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .urgent-author { display: flex; align-items: center; gap: 10px; }
+    .urgent-author-av { width: 40px; height: 40px; border-radius: 50%; background: var(--gold); padding: 2px; flex-shrink: 0; box-sizing: border-box; }
+    .urgent-author-av img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+    .urgent-author-name { font-size: 12.5px; font-weight: 700; color: var(--white); line-height: 1.25; }
+    .urgent-author-role { font-size: 10.5px; color: rgba(255,255,255,0.55); line-height: 1.3; margin-top: 1px; }
+    .urgent-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 2px; position: relative; z-index: 2; }
+    .urgent-btn { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 14px 26px; transition: background 0.15s, color 0.15s, transform 0.15s, box-shadow 0.15s; }
+    .urgent-btn::after { content: '\2192'; font-size: 13px; }
+    .urgent-btn-primary { background: var(--gold); color: var(--charcoal); }
+    .urgent-btn-primary:hover { background: #FFD982; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255,184,28,0.30); }
+    .urgent-btn-secondary { background: transparent; color: var(--gold); border: 2px solid var(--gold); padding: 12px 24px; }
+    .urgent-btn-secondary:hover { background: var(--gold); color: var(--charcoal); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(255,184,28,0.22); }
 
     /* SECTION IMAGES */
     .feature-hero-img { margin: 6px 0 26px; height: 240px; overflow: hidden; }
@@ -408,6 +421,8 @@
       .events-content-col { padding: 24px 24px 28px; }
       .urgent-callout { margin: 0 -24px 24px; padding: 24px 24px 22px; }
       .urgent-trainings, .urgent-body, .urgent-footer { grid-template-columns: 1fr; }
+      .urgent-actions { flex-direction: column; }
+      .urgent-btn { justify-content: center; }
       .urgent-hed { font-size: 28px; }
       .feature-hero-img { height: 180px; }
       .feature-hero-img:has(.feature-stat-hero) { height: auto; }
@@ -483,7 +498,7 @@
           <blockquote class="leadership-quote" style="flex:1 1 340px;margin-bottom:0;">
             "Our clients place tremendous trust in us to help guide critical business decisions, and we take that responsibility seriously. Receiving this recognition speaks to the passion, expertise, and relationship-driven approach of our entire team."
           </blockquote>
-          <a href="https://www.stambaughness.com/news/clearlyrated-2026-best-of-accounting-award/" target="_blank" rel="noopener" style="flex:0 0 auto;display:block;width:100px;background:var(--white);border:1px solid rgba(255,184,28,0.45);padding:9px;text-decoration:none;transition:transform 0.15s, box-shadow 0.15s;">
+          <a href="https://www.stambaughness.com/news/clearlyrated-2026-best-of-accounting-award/" target="_blank" rel="noopener" style="flex:0 0 auto;display:block;width:100px;background:var(--white);border:1px solid rgba(255,184,28,0.45);padding:9px;text-decoration:none;">
             <img src="https://www.stambaughness.com/wp-content/uploads/2026/06/Best-of-Accounting-Client-Color-224x300-1.webp" alt="ClearlyRated 2026 Best of Accounting Award for Client Service Excellence" style="width:100%;display:block;"/>
           </a>
         </div>
@@ -496,7 +511,6 @@
             <div class="attrib-title">President &amp; Chief Executive Officer</div>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -518,12 +532,12 @@
             <div class="feature-stat-eyebrow">AEC Marketing &amp; BD Research</div>
             <h3 class="feature-stat-headline">of AEC marketing leaders now name <em>client experience</em> as their firm's top differentiator.</h3>
             <p class="feature-stat-body">A number that has climbed steeply in just a few years. Not price. Not technical depth. What it feels like to work with you.</p>
-            <div class="feature-stat-source">Source &middot; <a href="https://smps.org/emerging-trends-in-aec/" target="_blank" rel="noopener">SMPS Foundation &amp; FMI Consulting &middot; Emerging Trends in AEC Marketing and Business Development</a></div>
+            <div class="feature-stat-source">Source · <a href="https://smps.org/emerging-trends-in-aec/" target="_blank" rel="noopener">SMPS Foundation &amp; FMI Consulting · Emerging Trends in AEC Marketing and Business Development</a></div>
           </div>
         </div>
       </div>
 
-      <p class="feature-dek"><em>Three voices from outside SN on what is changing: how clients judge the experience, why business development resists a formula, and what AI is doing to the value of judgment.</em></p>
+      <p class="feature-dek"><em>Three voices from outside SN on what is changing: how clients judge the experience, why business development resists a formula, and where the real growth actually sits.</em></p>
 
       <div class="feature-body">
         <p><b>Client experience has quietly become the thing clients actually decide on.</b> SMPS Foundation research with FMI Consulting found that 87% of AEC marketing leaders now point to client experience as their firm's leading differentiator, a share that has risen sharply in a short window. It's also measurable: a companion SMPS Foundation study with Client Savvy found that firms tracking the return on their client experience work are 94% more likely to post above-average growth and 113% more likely to post above-average profitability.</p>
@@ -546,17 +560,16 @@
             <div class="course-desc">Technical professionals want a formula for winning work. Lindsay Young argues there isn't one: lasting client relationships get built through patience, trust, and connection, not process.</div>
             <div class="course-meta">The Zweig Letter &middot; Lindsay Young</div>
           </a>
-          <a href="https://zweiggroup.com/blogs/the-zweig-letter/humanity-and-the-algorithm" target="_blank" rel="noopener" class="course-card">
-            <div class="course-tag">AI &amp; Judgment</div>
-            <div class="course-title" style="padding-right:0;">Humanity and the Algorithm</div>
-            <div class="course-desc">AI can process data in seconds. Experienced professionals still supply the judgment that makes a recommendation trustworthy, and that judgment is what clients are actually buying.</div>
-            <div class="course-meta">The Zweig Letter &middot; Tsun &amp; Samuels</div>
+          <a href="https://zweiggroup.com/blogs/the-zweig-letter/how-aec-firms-become-trusted-client-advisors" target="_blank" rel="noopener" class="course-card">
+            <div class="course-tag">Cross-Serving</div>
+            <div class="course-title" style="padding-right:0;">What Actually Motivates a Client</div>
+            <div class="course-desc">Repeat clients account for roughly 75% of revenue at architecture and engineering firms. The piece argues you hold that position by making clients look good, making their lives easier, and keeping them out of trouble.</div>
+            <div class="course-meta">The Zweig Letter &middot; Client Advisory</div>
           </a>
         </div>
 
       </div>
 
-      <a href="https://go.clearlyrated.com/hubfs/Client%20Experience%20in%20the%20AEC%20Industry%20with%20SMPS%20Foundation.pdf" target="_blank" rel="noopener" class="cta-link">Read the AEC client experience benchmarks from the SMPS Foundation</a>
     </section>
 
     <div class="rule-gold"><div class="rule-gold-center"></div></div>
@@ -571,29 +584,29 @@
 
       <div class="feature-kicker">Resources · August 2026</div>
       <h2 class="feature-hed">Resources for Growing the Relationships You Already Have.</h2>
-      <p class="reads-intro"><em>A short set of resources on client relationships: how engaged clients actually are, what separates a satisfied client from a loyal one, and a way to stay sharp on the technical side.</em></p>
+      <p class="reads-intro"><em>Three current resources on client relationships: what the newest industry benchmarks say about chasing work, the warning signs that show up before a client leaves, and how the best firms measure any of it.</em></p>
 
       <div class="reads-grid" style="grid-template-columns:1fr 1fr 1fr;">
-        <a href="https://news.gallup.com/businessjournal/193409/b2bs-customer-base-risk.aspx" target="_blank" rel="noopener" class="read-card">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=60" alt="Client conversation" style="width:calc(100% + 44px);height:104px;object-fit:cover;display:block;margin:-18px -22px 14px -22px;"/>
-          <div class="read-card-source">Gallup · B2B Research</div>
-          <div class="read-card-title">Only 29% of Clients Are Fully Engaged</div>
-          <div class="read-card-summary">Gallup finds that most business clients are neither loyal nor unhappy, they're indifferent. Indifference is the quiet risk, and it's usually reversible long before a client starts shopping.</div>
+        <a href="https://www.deltek.com/en/blog/clarity-ae-launch" target="_blank" rel="noopener" class="read-card">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=60" alt="Reviewing industry benchmarks" style="width:calc(100% + 44px);height:104px;object-fit:cover;display:block;margin:-18px -22px 14px -22px;"/>
+          <div class="read-card-source">Deltek Clarity &middot; May 2026</div>
+          <div class="read-card-title">Chasing More Work Stopped Working</div>
+          <div class="read-card-summary">The 47th annual A&amp;E study, drawn from 896 firms, finds that raising proposal volume no longer reliably drives growth. Firms that focus on the right opportunities and the right relationships grow more profitably.</div>
           <span class="read-card-link">Read →</span>
         </a>
-        <a href="https://news.gallup.com/businessjournal/190400/biggest-driver-b2b-success-meaningful-customer-impact.aspx" target="_blank" rel="noopener" class="read-card">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=60" alt="Team working with a client" style="width:calc(100% + 44px);height:104px;object-fit:cover;display:block;margin:-18px -22px 14px -22px;"/>
-          <div class="read-card-source">Gallup · Customer Impact</div>
-          <div class="read-card-title">Satisfaction Isn't the Goal. Impact Is.</div>
-          <div class="read-card-summary">The firms that grow accounts aren't the most agreeable ones. They're the ones bringing unprompted ideas that measurably improve the client's business, which is exactly what cross-serving looks like in practice.</div>
+        <a href="https://www.clearlyrated.ai/blog/aec-client-experience" target="_blank" rel="noopener" class="read-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=60" alt="Team meeting with a client" style="width:calc(100% + 44px);height:104px;object-fit:cover;display:block;margin:-18px -22px 14px -22px;"/>
+          <div class="read-card-source">ClearlyRated &middot; January 2026</div>
+          <div class="read-card-title">The Signals Before a Client Leaves</div>
+          <div class="read-card-summary">Most firms track project metrics and miss the relationship ones. Firms running structured client feedback report an average 17-point lift in Net Promoter Score and recover a large share of at-risk accounts.</div>
           <span class="read-card-link">Read →</span>
         </a>
-        <a href="https://www.bdo.com/events" target="_blank" rel="noopener" class="read-card">
-          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&auto=format&fit=crop&q=60" alt="Professional learning" style="width:calc(100% + 44px);height:104px;object-fit:cover;display:block;margin:-18px -22px 14px -22px;"/>
-          <div class="read-card-source">BDO Alliance · Events &amp; Webcasts</div>
-          <div class="read-card-title">Technical Updates &amp; CPE</div>
-          <div class="read-card-summary">Through our BDO Alliance membership, BDO's public webcast series keeps finance, board, and audit-committee teams current on technical developments. Many sessions offer CPE and are free to join.</div>
-          <span class="read-card-link">View →</span>
+        <a href="https://www.accountingtoday.com/opinion/building-the-firm-of-the-future-key-shifts-to-watch-in-2026" target="_blank" rel="noopener" class="read-card">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&auto=format&fit=crop&q=60" alt="Advisor and client in discussion" style="width:calc(100% + 44px);height:104px;object-fit:cover;display:block;margin:-18px -22px 14px -22px;"/>
+          <div class="read-card-source">Accounting Today &middot; February 2026</div>
+          <div class="read-card-title">Relationships Become the Differentiator</div>
+          <div class="read-card-summary">Where accounting and advisory firms are heading this year. As technology absorbs more of the routine work, relationship-based advising moves to the center and human judgment becomes what clients are paying for.</div>
+          <span class="read-card-link">Read →</span>
         </a>
       </div>
 
@@ -624,14 +637,38 @@
         </div>
       </div>
 
+      <div class="urgent-actions">
+        <a href="https://www.stambaughness.com/publication/2027-emerging-trends-aec-marketing-bd/" target="_blank" rel="noopener" class="urgent-btn urgent-btn-primary">Report Overview</a>
+        <a href="https://www.stambaughness.com/event/emerging-trends-in-aec-webinar/" target="_blank" rel="noopener" class="urgent-btn urgent-btn-secondary">Register for the Webinar</a>
+      </div>
+
       <div class="urgent-footer">
         <div class="urgent-footer-block">
           <b>Research Authors</b>
-          Scott D. Butcher, FSMPS, CPSM, and Barbara Stiles, FSMPS, CPSM, with the SMPS Foundation.
+          <div class="urgent-authors" style="margin-top:8px;">
+            <div class="urgent-author">
+              <div class="urgent-author-av">
+                <img src="https://www.stambaughness.com/wp-content/uploads/2020/12/Scott-Butcher-2026-500.webp" alt="Scott D. Butcher"/>
+              </div>
+              <div>
+                <div class="urgent-author-name">Scott D. Butcher, FSMPS, CPSM</div>
+                <div class="urgent-author-role">Managing Director, Strategic Growth Advisory</div>
+              </div>
+            </div>
+            <div class="urgent-author">
+              <div class="urgent-author-av">
+                <img src="https://www.stambaughness.com/wp-content/uploads/2025/01/Barbara-Stiles-2025-500.webp" alt="Barbara Stiles"/>
+              </div>
+              <div>
+                <div class="urgent-author-name">Barbara Stiles, FSMPS, CPSM</div>
+                <div class="urgent-author-role">Senior Consultant, Strategic Growth Advisory</div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="urgent-footer-block">
-          <b>Go Deeper</b>
-          Browse the <a href="https://www.stambaughness.com/publication/2027-emerging-trends-aec-marketing-bd/" target="_blank" rel="noopener">report overview</a>, or join the <a href="https://www.stambaughness.com/event/emerging-trends-in-aec-webinar/" target="_blank" rel="noopener">August 11 highlights webinar</a>.
+          <b>Live Session</b>
+          August 11, 12:00 to 1:30 p.m. ET. Offers 1.5 CPSM CEUs and 1.5 AIA LUs. Registration runs through the SMPS portal.
         </div>
       </div>
     </div>
